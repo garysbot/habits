@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { Button, Alert } from 'react-bootstrap';
 import './SessionForm.css';
 
 import { login, clearSessionErrors } from '../../store/session';
@@ -47,11 +48,14 @@ function LoginForm () {
           placeholder="Password"
         />
       </label>
-      <input
+      {/* <input
         type="submit"
         value="Log In"
         disabled={!email || !password}
-      />
+      /> */}
+      <Button variant="primary" type="submit" disabled={!email || !password}>
+        Log In
+      </Button>
     </form>
   );
 }

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import './SessionForm.css';
 import { signup, clearSessionErrors } from '../../store/session';
+import { Button, Alert } from 'react-bootstrap';
 
 function SignupForm () {
   const [email, setEmail] = useState('');
@@ -92,11 +93,12 @@ function SignupForm () {
           placeholder="Confirm Password"
         />
       </label>
-      <input
-        type="submit"
-        value="Sign Up"
-        disabled={!email || !username || !password || password !== password2}
-      />
+      <Button 
+        variant="primary" 
+        type="submit" 
+        disabled={!email || !username || !password || password !== password2}>
+          Sign Up
+      </Button>
     </form>
   );
 }
